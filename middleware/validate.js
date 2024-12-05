@@ -1,4 +1,3 @@
-// File: middleware/validation.js
 const { body, validationResult } = require('express-validator');
 
 const productValidationRules = () => {
@@ -79,9 +78,6 @@ const userValidationRules = () => {
     ];
 };
 
-
-
-
 const validate = (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -92,6 +88,6 @@ const validate = (req, res, next) => {
 
 module.exports = {
     productValidationRules,
-    sellerValidationRules,
+    userValidationRules,
     validate
 };
