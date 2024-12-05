@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv').config();
+const cors = require('cors');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -15,8 +16,8 @@ app
         );
         next();
     })
-    .use({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT']})
-    .use({ origin: '*' })
+    .use(cors({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']}))
+    .use(cors({ origin: '*' }))
     .use("/", require("./routes/index.js"));
 
 mongodb.initDb((err) => {
