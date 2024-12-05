@@ -1,0 +1,66 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@example.com",
+    "passwordHash": "",
+    "address": "123 Main St, Springfield, IL",
+    "createdAt": "2024-12-01"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "email": "bob.smith@example.com",
+    "passwordHash": "",
+    "address": "456 Elm St, Denver, CO",
+    "createdAt": "2024-12-02"
+  },
+  {
+    "firstName": "Charlie",
+    "lastName": "Brown",
+    "email": "charlie.brown@example.com",
+    "passwordHash": "",
+    "address": "789 Oak St, Austin, TX",
+    "createdAt": "2024-12-03"
+  },
+  {
+    "firstName": "Diana",
+    "lastName": "Prince",
+    "email": "diana.prince@example.com",
+    "passwordHash": "",
+    "address": "321 Pine St, Orlando, FL",
+    "createdAt": "2024-12-04"
+  },
+  {
+    "firstName": "Eve",
+    "lastName": "Adams",
+    "email": "eve.adams@example.com",
+    "passwordHash": "",
+    "address": "654 Maple St, Seattle, WA",
+    "createdAt": "2024-12-05"
+  },
+  {
+    "firstName": "Frank",
+    "lastName": "Castle",
+    "email": "frank.castle@example.com",
+    "passwordHash": "",
+    "address": "987 Birch St, Chicago, IL",
+    "createdAt": "2024-12-06"
+  },
+  {
+    "firstName": "Grace",
+    "lastName": "Lee",
+    "email": "grace.lee@example.com",
+    "passwordHash": "",
+    "address": "213 Cedar St, Portland, OR",
+    "createdAt": "2024-12-07"
+  },
+  {
+    "firstName": "Hank",
+    "lastName": "Hill",
+    "email": "hank.hill@example.com",
+    "passwordHash": "",
+    "address": "345 Walnut St, Dallas, TX",
+    "createdAt": "2024-12-08"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "node": "^22.12.0"
+  },
+  "name": "cse341-ecommerce",
+  "version": "1.0.0",
+  "description": "Team Project for Web Services Course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NadiaGomezP/CSE341-Ecommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NadiaGomezP/CSE341-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/NadiaGomezP/CSE341-Ecommerce#readme"
+}

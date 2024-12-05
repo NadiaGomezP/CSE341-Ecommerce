@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Smart Watch Series 8",
+        "category": "Wearables",
+        "description": "The latest Apple smartwatch with advanced health tracking.",
+        "price": 99.99,
+        "stockQuantity": 5,
+        "brand": "Apple",
+        "rating": 5,
+        "dateAdded": "2024-11-10",
+        "isAvailable": true
+    },
+    {
+        "name": "iPhone 15 Pro Max",
+        "category": "Smartphones",
+        "description": "Apple's flagship smartphone with cutting-edge performance.",
+        "price": 1199.99,
+        "stockQuantity": 10,
+        "brand": "Apple",
+        "rating": 5,
+        "dateAdded": "2024-11-12",
+        "isAvailable": true
+    },
+    {
+        "name": "MacBook Pro M3",
+        "category": "Laptops",
+        "description": "Apple's most powerful laptop with M3 chip.",
+        "price": 2499.99,
+        "stockQuantity": 7,
+        "brand": "Apple",
+        "rating": 5,
+        "dateAdded": "2024-11-15",
+        "isAvailable": true
+    },
+    {
+        "name": "iPad Air 6th Gen",
+        "category": "Tablets",
+        "description": "Apple's lightweight tablet with powerful performance.",
+        "price": 599.99,
+        "stockQuantity": 15,
+        "brand": "Apple",
+        "rating": 4.5,
+        "dateAdded": "2024-11-18",
+        "isAvailable": true
+    },
+    {
+        "name": "AirPods Pro 2nd Gen",
+        "category": "Audio",
+        "description": "Apple's noise-cancelling earbuds with spatial audio.",
+        "price": 249.99,
+        "stockQuantity": 20,
+        "brand": "Apple",
+        "rating": 4.8,
+        "dateAdded": "2024-11-20",
+        "isAvailable": true
+    },
+    {
+        "name": "Pixel 8 Pro",
+        "category": "Smartphones",
+        "description": "Google's flagship phone with AI-enhanced features.",
+        "price": 999.99,
+        "stockQuantity": 8,
+        "brand": "Google",
+        "rating": 5,
+        "dateAdded": "2024-11-10",
+        "isAvailable": true
+    },
+    {
+        "name": "Pixel Watch 2",
+        "category": "Wearables",
+        "description": "Google's latest smartwatch with fitness tracking.",
+        "price": 349.99,
+        "stockQuantity": 12,
+        "brand": "Google",
+        "rating": 4.7,
+        "dateAdded": "2024-11-12",
+        "isAvailable": true
+    },
+    {
+        "name": "Pixel Buds Pro",
+        "category": "Audio",
+        "description": "Google's premium earbuds with active noise cancellation.",
+        "price": 199.99,
+        "stockQuantity": 18,
+        "brand": "Google",
+        "rating": 4.6,
+        "dateAdded": "2024-11-14",
+        "isAvailable": true
+    },
+    {
+        "name": "Pixel Tablet",
+        "category": "Tablets",
+        "description": "Google's versatile tablet for productivity and entertainment.",
+        "price": 499.99,
+        "stockQuantity": 10,
+        "brand": "Google",
+        "rating": 4.5,
+        "dateAdded": "2024-11-16",
+        "isAvailable": true
+    },
+    {
+        "name": "Pixel Fold",
+        "category": "Smartphones",
+        "description": "Google's foldable phone with innovative design.",
+        "price": 1799.99,
+        "stockQuantity": 5,
+        "brand": "Google",
+        "rating": 4.9,
+        "dateAdded": "2024-11-18",
+        "isAvailable": true
+    }
+]
