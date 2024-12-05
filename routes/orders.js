@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const ordersController = require('../controllers/orders');
-/*const { orderValidationRules, validate } = require('../middleware/validate');
+//const { orderValidationRules, validate } = require('../middleware/validate');
 
 /* CRUD routes */
 router.get('/', ordersController.getAll);
