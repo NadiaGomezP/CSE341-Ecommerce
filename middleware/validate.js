@@ -1,7 +1,6 @@
 const { body, validationResult } = require('express-validator');
 
-const productValidationRules = () => {
-    return [
+const productValidationRules = [
         // Validate and sanitize fields for the 'products' collection.
         body('name')
             .notEmpty()
@@ -42,7 +41,6 @@ const productValidationRules = () => {
             .isBoolean()
             .withMessage('Availability must be true or false'),
     ];
-};
 
 const userValidationRules = [
         // Validate and sanitize fields for the 'users' collection.
