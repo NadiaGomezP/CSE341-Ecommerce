@@ -44,8 +44,7 @@ const productValidationRules = () => {
     ];
 };
 
-const userValidationRules = () => {
-    return [
+const userValidationRules = [
         // Validate and sanitize fields for the 'users' collection.
         body('firstName')
             .notEmpty()
@@ -62,21 +61,15 @@ const userValidationRules = () => {
             .isEmail()
             .withMessage('Valid email is required')
             .normalizeEmail(),
-        body('passwordHash')
-            .notEmpty()
-            .withMessage('Password is required')
-            .trim()
-            .escape(),
         body('address')
-            .isInt({ min: 0 })
+            .notEmpty()
             .withMessage('Address is required'),
         body('createdAt')
             .notEmpty()
             .withMessage('A data is required')
             .trim()
             .escape(),
-    ];
-};
+    ]
 
 const validate = (req, res, next) => {
     const errors = validationResult(req);
