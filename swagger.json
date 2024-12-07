@@ -1,0 +1,436 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Product and Review API",
+    "description": "API for managing products, reviews, and orders. This API allows users to create, update, delete, and retrieve products, reviews, and orders.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "Retrieves the Swagger documentation for the API.",
+        "responses": {
+          "default": {
+            "description": "The Swagger API documentation."
+          }
+        }
+      }
+    },
+    "/products/": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Retrieves a list of all products.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of products."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Creates a new product with the provided details.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": { "example": "any" },
+                "category": { "example": "any" },
+                "description": { "example": "any" },
+                "price": { "example": "any" },
+                "stockQuantity": { "example": "any" },
+                "brand": { "example": "any" },
+                "rating": { "example": "any" },
+                "dateAdded": { "example": "any" },
+                "isAvailable": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Product successfully created."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while creating the product."
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Retrieves a single product by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the product."
+          },
+          "400": {
+            "description": "Invalid product ID provided."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Updates an existing product by its ID with the provided data.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": { "example": "any" },
+                "category": { "example": "any" },
+                "description": { "example": "any" },
+                "price": { "example": "any" },
+                "stockQuantity": { "example": "any" },
+                "brand": { "example": "any" },
+                "rating": { "example": "any" },
+                "dateAdded": { "example": "any" },
+                "isAvailable": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully updated the product."
+          },
+          "400": {
+            "description": "Invalid product ID or data provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while updating the product."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Deletes a product by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product successfully deleted."
+          },
+          "400": {
+            "description": "Invalid product ID provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while deleting the product."
+          }
+        }
+      }
+    },
+    "/orders/": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Retrieves a list of all orders.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of orders."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Creates a new order with the provided details.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": { "example": "any" },
+                "productIds": { "example": "any" },
+                "orderDate": { "example": "any" },
+                "totalAmount": { "example": "any" },
+                "status": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Order successfully created."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while creating the order."
+          }
+        }
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Retrieves a single order by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the order."
+          },
+          "400": {
+            "description": "Invalid order ID provided."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Updates an existing order by its ID with the provided data.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": { "example": "any" },
+                "productIds": { "example": "any" },
+                "orderDate": { "example": "any" },
+                "totalAmount": { "example": "any" },
+                "status": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully updated the order."
+          },
+          "400": {
+            "description": "Invalid order ID or data provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while updating the order."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Orders"
+        ],
+        "description": "Deletes an order by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Order successfully deleted."
+          },
+          "400": {
+            "description": "Invalid order ID provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while deleting the order."
+          }
+        }
+      }
+    },
+    "/reviews/": {
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "Retrieves a list of all reviews.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of reviews."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "Creates a new review with the provided details.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productId": { "example": "any" },
+                "userId": { "example": "any" },
+                "rating": { "example": "any" },
+                "comment": { "example": "any" },
+                "createdAt": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Review successfully created."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while creating the review."
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "Retrieves a single review by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the review."
+          },
+          "400": {
+            "description": "Invalid review ID provided."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "Updates an existing review by its ID with the provided data.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productId": { "example": "any" },
+                "userId": { "example": "any" },
+                "rating": { "example": "any" },
+                "comment": { "example": "any" },
+                "createdAt": { "example": "any" }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully updated the review."
+          },
+          "400": {
+            "description": "Invalid review ID or data provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while updating the review."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "Deletes a review by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Review successfully deleted."
+          },
+          "400": {
+            "description": "Invalid review ID provided."
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong while deleting the review."
+          }
+        }
+      }
+    }
+  }
+}
