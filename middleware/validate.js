@@ -97,6 +97,29 @@ const reviewValidationRules = [
         .trim()
         .escape(),
     ]
+const orderValidationRules = [
+    // Validate and sanitize fields for the 'orders' collection.
+    body('userId')
+        .notEmpty()
+        .withMessage('User ID is required')
+        .isMongoId()
+        .withMessage('Invalid User ID'),
+    body('productIds')
+        .isArray({ min: 1 })
+        .withMessage('Product IDs must be a non-empty array')
+     //   .custom((value) => value.isMongoId())
+    //  .withMessage('Each product ID must be valid')
+    ,
+    body('orderDate')
+        .isISO8601()
+        .withMessage('Order date must be a valid date in ISO 8601 format'),
+    body('totalAmount')
+        .isFloat({ gt: 0 })
+        .withMessage('Total amount must be a positive number'),
+    body('status')
+        .isIn(['Pending', 'Completed', 'Delivered', 'Cancelled'])
+        .withMessage('Status must be one of the following: pending, shipped, delivered, cancelled')
+];
 
 const validate = (req, res, next) => {
     const errors = validationResult(req);
@@ -110,5 +133,6 @@ module.exports = {
     productValidationRules,
     userValidationRules,
     reviewValidationRules,
+    orderValidationRules,
     validate
 };

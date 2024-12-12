@@ -96,10 +96,73 @@ const deleteOrder = async (req, res) => {
     }
 };
 
+const getProductsForOrder = async (req, res) => {
+
+    if (!ObjectId.isValid(req.params.id)) {
+        return res.status(400).json('Must use a valid order ID to find the products.');
+    }
+     //#swagger.tags=['Orders']
+    try {
+        const orderId = new ObjectId(req.params.id);
+        const orderResult = await mongodb
+            .getDatabase()
+            .db()
+            .collection('orders')
+            .findOne({ _id: orderId });
+
+        if (!orderResult) {
+            return res.status(404).json('Order not found.');
+        }
+
+        const productIds = orderResult.productIds.map(id => new ObjectId(id));
+        const products = await mongodb
+            .getDatabase()
+            .db()
+            .collection('products')
+            .find({ _id: { $in: productIds } })
+            .toArray();
+
+        res.status(200).json(products);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json('Some error occurred while fetching the products for the order.');
+    }
+};
+const getOrdersByUser = async (req, res) => {
+    if (!ObjectId.isValid(req.params.userId)) {
+        return res.status(400).json('Must use a valid user ID to find the orders.');
+    }
+
+    //#swagger.tags=['Orders']
+    try {
+        const userId = req.params.userId; 
+        const orders = await mongodb
+            .getDatabase()
+            .db()
+            .collection('orders')
+            .find({ userId: userId }) 
+            .toArray();
+
+        if (orders.length === 0) {
+            return res.status(404).json('No orders found for this user.');
+        }
+
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json('Some error occurred while fetching orders for the user.');
+    }
+};
+
+
+
+
 module.exports = {
     getAll,
     getSingle,
     createOrder,
     updateOrder,
-    deleteOrder
+    deleteOrder,
+    getProductsForOrder,
+    getOrdersByUser
 };
