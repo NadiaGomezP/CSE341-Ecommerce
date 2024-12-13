@@ -3,9 +3,10 @@
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "express-session": "^1.18.1",
     "express-validator": "^7.2.0",
+    "mockingoose": "^2.16.2",
     "mongodb": "^6.11.0",
     "mongoose": "^8.8.3",
     "node": "^22.12.0",
@@ -18,7 +19,7 @@
   "description": "Team Project for Web Services Course",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "server.js"
   },
   "repository": {
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/NadiaGomezP/CSE341-Ecommerce#readme",
   "devDependencies": {
+    "jest": "^29.7.0",
     "swagger-autogen": "^2.23.7"
   }
 }
