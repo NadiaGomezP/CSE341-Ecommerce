@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Product and Review API',
-    description: 'API for managing products and reviews',
+    title: 'QuickCart  API',
+    description: 'API for managing users, products, orders and reviews',
   },
   host: 'localhost:3000',
   schemes: ['https', 'http'],
